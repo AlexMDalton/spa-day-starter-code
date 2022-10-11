@@ -31,8 +31,8 @@ public class User {
     }
 
     private void checkPassword(){
-        if(!(password == verifyPassword) || password == null || verifyPassword == null){
-            verifyPassword = null;
+        if(!(this.verifyPassword.equals(this.password)) && password != null && verifyPassword != null){
+            this.setVerifyPassword(null);
         }
     }
 
@@ -58,13 +58,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-        checkPassword();
+        this.checkPassword();
     }
 
     public String getVerifyPassword() { return verifyPassword; }
 
     public void setVerifyPassword(String verifyPassword) {
         this.verifyPassword = verifyPassword;
-        checkPassword();
+        this.checkPassword();
     }
 }
